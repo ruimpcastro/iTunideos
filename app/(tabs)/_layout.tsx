@@ -9,6 +9,7 @@ const TabLayout = () => {
         tabBarActiveTintColor: "green",
         tabBarInactiveTintColor: "gray",
       }}
+      backBehavior="order"
     >
       <Tabs.Screen
         name="index"
@@ -41,11 +42,12 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="(qr-hunt)"
+        name="qr-hunt"
         options={{
           title: "Crachás",
           headerShown: false,
           tabBarBadge: 99,
+          popToTopOnBlur: true,
           tabBarBadgeStyle: {
             backgroundColor: "green",
             color: "white",

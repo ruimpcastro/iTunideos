@@ -1,9 +1,15 @@
 import React from "react";
-import { Stack } from "expo-router";
+import { Stack, usePathname } from "expo-router";
 
 const QrHuntLayout = () => {
+  const pathName = usePathname();
+
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        animation: pathName.startsWith("/qr-hunt") ? "default" : "none",
+      }}
+    >
       <Stack.Screen
         name="index"
         options={{

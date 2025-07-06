@@ -11,7 +11,7 @@ const QrHunt = () => {
         alignItems: "center",
       }}
     >
-      <Link href="/Granada" push asChild>
+      <Link href="/qr-hunt/Granada" push asChild>
         <Button title="Access: Granada" />
       </Link>
     </View>

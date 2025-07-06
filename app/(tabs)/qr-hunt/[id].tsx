@@ -1,9 +1,11 @@
 import { View, Text, StyleSheet, Button } from "react-native";
 import React from "react";
-import { Link, useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useRouter } from "expo-router";
 
 const Atuno = () => {
   const { id } = useLocalSearchParams();
+  const router = useRouter();
+  const canGoBack = router.canGoBack();
   return (
     <View
       style={{
@@ -13,9 +15,10 @@ const Atuno = () => {
       }}
     >
       <Text>Atuno deste link: {id}</Text>
-      <Link href="../" push asChild>
-        <Button title="Voltar para QR Hunt" />
-      </Link>
+
+      {canGoBack && (
+        <Button title="Voltar para QR Hunt" onPress={() => router.back()} />
+      )}
     </View>
   );
 };
