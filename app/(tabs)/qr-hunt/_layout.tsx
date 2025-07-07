@@ -24,6 +24,13 @@ const QrHuntLayout = () => {
           headerShown: true,
         }}
       />
+      <Stack.Screen
+        name="scanner"
+        options={{
+          title: "QR-Scanner",
+          headerShown: true,
+        }}
+      />
     </Stack>
   );
 };
