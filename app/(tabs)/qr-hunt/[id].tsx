@@ -16,7 +16,7 @@ async function getData(id: string) {
       console.log("No such document!");
     }
   } catch (error) {
-    console.error("Error getting document:", error);
+    console.error("Error getting document:aa", error);
   }
 }
 
