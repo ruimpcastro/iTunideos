@@ -4,6 +4,8 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { doc, DocumentData, getDoc } from "firebase/firestore";
 import { db } from "@/config/firebase";
 
+// TODO: Improve all of the logic here, this is just a basic implementation
+// Atuno component for displaying details of a QR code
 async function getData(id: string) {
   try {
     const docRef = doc(db, "qr", id);

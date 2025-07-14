@@ -2,23 +2,9 @@ import { CameraView, useCameraPermissions } from "expo-camera";
 import { View, Button, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { RelativePathString, usePathname, useRouter } from "expo-router";
-import { db } from "../../../config/firebase";
-import { doc, getDoc } from "firebase/firestore";
 
-async function getData(id: string) {
-  try {
-    const docRef = doc(db, "qr", id);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      return docSnap.data();
-    } else {
-      console.log("No such document!");
-    }
-  } catch (error) {
-    console.error("Error getting document:", error);
-  }
-}
-
+// TODO: Improve all of the logic here, this is just a basic implementation
+// Scanner component for QR code scanning in the QR Hunt feature
 const Scanner = () => {
   const pathName = usePathname();
   const router = useRouter();
