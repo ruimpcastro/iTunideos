@@ -1,7 +1,7 @@
-import { CameraView, useCameraPermissions } from "expo-camera";
-import { View, Button, Text, TouchableOpacity } from "react-native";
-import React from "react";
-import { RelativePathString, usePathname, useRouter } from "expo-router";
+import { CameraView, useCameraPermissions } from 'expo-camera';
+import { View, Button, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { RelativePathString, usePathname, useRouter } from 'expo-router';
 
 // TODO: Improve all of the logic here, this is just a basic implementation
 // Scanner component for QR code scanning in the QR Hunt feature
@@ -15,8 +15,8 @@ const Scanner = () => {
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Button title="Use camera" onPress={requestPermission} />
@@ -28,8 +28,8 @@ const Scanner = () => {
       <View
         style={{
           flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
+          justifyContent: 'center',
+          alignItems: 'center',
         }}
       >
         <Text>We need your camera permission to show the camera</Text>
@@ -40,11 +40,11 @@ const Scanner = () => {
   return (
     <CameraView
       barcodeScannerSettings={{
-        barcodeTypes: ["qr"],
+        barcodeTypes: ['qr'],
       }}
       onCameraReady={() => setActive(true)}
       onBarcodeScanned={(event) => {
-        if (pathName === "/qr-hunt/scanner") {
+        if (pathName === '/qr-hunt/scanner') {
           setActive(false);
           router.push(event.data as RelativePathString);
         }
@@ -55,8 +55,8 @@ const Scanner = () => {
     >
       <TouchableOpacity
         style={{
-          alignItems: "center",
-          backgroundColor: "#DDDDDD",
+          alignItems: 'center',
+          backgroundColor: '#DDDDDD',
           padding: 10,
         }}
         onPress={() => router.dismissAll()}

@@ -1,70 +1,60 @@
-import React from "react";
-import { Tabs } from "expo-router";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import React from 'react';
+import { Tabs } from 'expo-router';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const TabLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "green",
-        tabBarInactiveTintColor: "gray",
+        tabBarActiveTintColor: 'green',
+        tabBarInactiveTintColor: 'gray',
       }}
       backBehavior="order"
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: 'Home',
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="home" size={size} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="el-acor"
         options={{
-          title: "El Açor",
+          title: 'El Açor',
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="egg" size={size} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => <Ionicons name="egg" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="tunideos"
         options={{
-          title: "Tunideos",
+          title: 'Tunideos',
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="fish" size={size} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => <Ionicons name="fish" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="qr-hunt"
         options={{
-          title: "Crachás",
+          title: 'Crachás',
           headerShown: false,
           tabBarBadge: 99,
           popToTopOnBlur: true,
           tabBarBadgeStyle: {
-            backgroundColor: "green",
-            color: "white",
+            backgroundColor: 'green',
+            color: 'white',
           },
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="medal" size={size} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => <Ionicons name="medal" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Profile",
+          title: 'Profile',
           headerShown: false,
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="person" size={size} color={color} />
-          ),
+          tabBarIcon: ({ color, size }) => <Ionicons name="person" size={size} color={color} />,
         }}
       />
     </Tabs>
