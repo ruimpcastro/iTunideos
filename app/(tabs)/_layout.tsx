@@ -12,14 +12,6 @@ const TabLayout = () => {
       backBehavior="order"
     >
       <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          headerShown: false,
-          tabBarIcon: ({ color, size }) => <Ionicons name="home" size={size} color={color} />,
-        }}
-      />
-      <Tabs.Screen
         name="el-acor"
         options={{
           title: 'El Açor',
