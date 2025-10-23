@@ -1,7 +1,18 @@
-import { View, Text, StyleSheet } from 'react-native';
-import React from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
+import { useState } from 'react';
+import { router } from 'expo-router';
+import { getAuth, User } from 'firebase/auth';
 
 const Profile = () => {
+  const [user, setUser] = useState<User | null>(null);
+  getAuth().onAuthStateChanged((user) => {
+    if (user) {
+      setUser(user);
+    } else {
+      router.replace('/');
+    }
+  });
+
   return (
     <View
       style={{
@@ -11,6 +22,8 @@ const Profile = () => {
       }}
     >
       <Text>Profile</Text>
+      <Text>Hello {user?.email}</Text>
+      <Button title="Logout" onPress={() => getAuth().signOut()} />
     </View>
   );
 };
