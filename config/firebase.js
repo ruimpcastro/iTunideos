@@ -21,6 +21,7 @@ const firebaseConfig = {
   measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
+//TODO: Refactor Firebase code and endpoint communication (Check youtube videos)[Specially for Authentication]
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = isSupported().then((yes) => (yes ? getAnalytics(app) : null));

@@ -22,7 +22,6 @@ export default function Index() {
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
       if (user) router.replace('/(tabs)/el-acor');
-      console.log(user);
     } catch (error: any) {
       console.error(error);
       alert('Signup failed' + error.message);

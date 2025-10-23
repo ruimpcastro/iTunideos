@@ -22,6 +22,16 @@ const Tunideos = () => {
     fetchTunas();
   }, []);
 
+  /** RULES
+ * Voting will open on both days
+ * It will open from the moment the first tuna starts
+ * It will close on the moment that the last tuna finishes
+ *
+ * CREATE A REALLY BIG WARNING FOR USERS SAYING THAT THEY CAN ONLY VOTE ONCE
+ * NO TURNING BACK
+ * NO CHANGING YOUR VOTE
+ * */
+
   async function voteFavoriteTuna(tunaName: string) {
     const tunaRef = doc(db, 'favoriteTuna', tunaName);
     const tunaDoc = await getDoc(tunaRef);
